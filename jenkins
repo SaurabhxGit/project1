@@ -26,7 +26,7 @@ pipeline{
 	 }
         stage('code deploy') {
             steps {
-	        deploy adapters: [tomcat8(credentialsId: 'saurabhx', path: '', url: 'http://3.139.54.28:8083/')], contextPath: '/', war: '**/*war'
+	        deploy adapters: [tomcat8(credentialsId: 'ad-1', path: '', url: '')], contextPath: '/', war: '**/*.war'
 
 
             }
