@@ -24,12 +24,9 @@ pipeline{
 
 	    }
 	 }
-      stage('code deploy') {
-          steps {
-	      sh'''
-	      deploy adapters: [tomcat8(path: '', url: 'http://3.139.54.28:8083/')], contextPath: '/', war: '**/*.war'
-	      '''
-	      sh "ls"
+        stage('code deploy') {
+            steps {
+	        deploy adapters: [tomcat8(path: '', url: 'http://3.139.54.28:8083/')], contextPath: '/', war: '**/*.war'
 
 
             }
