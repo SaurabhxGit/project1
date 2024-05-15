@@ -30,8 +30,8 @@ pipeline {
             steps {
                 sh'''
                 sudo aws ecr get-login-password --region us-east-2 | sudo docker login --username AWS --password-stdin 339713065848.dkr.ecr.us-east-2.amazonaws.com
-                sudo docker tag repo12:latest 339713065848.dkr.ecr.us-east-2.amazonaws.com/repo12:1
-                sudo docker push 339713065848.dkr.ecr.us-east-2.amazonaws.com/repo12:1
+                sudo docker tag repo12:latest 339713065848.dkr.ecr.us-east-2.amazonaws.com/repo12:2
+                sudo docker push 339713065848.dkr.ecr.us-east-2.amazonaws.com/repo12:2
                 '''
             }
         }
