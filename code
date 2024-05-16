@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('ckheckout') {
+            steps {
+              git 'https://github.com/Pritam-Khergade/student-ui.git'
+            }
+        }
+        stage('mvn') {
+            steps {
+               sh 'mvn clean install'
+            }
+        }
+        stage('rename') {
+            steps {
+                sh 'mv target/studentapp-2.2-SNAPSHOT.war  target/studentapp-2.2-SNAPSHOT-${BUILD_TIMESTAMP}.war '
+                sh 'aws s3 cp target/studentapp-2.2-SNAPSHOT-${BUILD_TIMESTAMP}.war  s3://bdb123'
+            }
+        }
+        
+    }
+}
+
