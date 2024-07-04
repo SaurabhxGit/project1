@@ -8,6 +8,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/SanjayTomar22/pikachu.git'
             }
         }
+
+        stage('maven install'){
+            steps{
+                sh'''
+		sudo yum install maven -y
+		'''
+            }
+        }
+
         
         stage('docker install') {
             steps{
