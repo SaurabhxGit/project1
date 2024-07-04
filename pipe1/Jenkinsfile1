@@ -49,7 +49,9 @@ pipeline {
             steps{
                  sh'''
 		  sudo docker tag repo12 saurabhxd/pipe1:1
-		  sudo docker push saurabhxd/pipe1:1  -u saurabhchoudhary300@gmail.com -p Saurabh@123
+		  sudo docker login -u saurabhxd -p Saurabh@123
+		   sudo docker push saurabhxd/pipe1:1
+
 		  '''
 	    }
 	}
