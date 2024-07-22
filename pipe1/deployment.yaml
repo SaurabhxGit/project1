@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: saurabhxd/pipe1:3
+        image: saurabhxd/pipe1:4
         ports:
         - containerPort: 80
